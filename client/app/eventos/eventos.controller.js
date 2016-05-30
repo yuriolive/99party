@@ -2,15 +2,22 @@
 (function(){
 
 class EventosComponent {
-  constructor() {
-    this.message = 'Hello';
+  constructor($http) {
+    this.$http = $http;
+  }
+
+  $onInit() {
+    this.$http.get('/api/cursos').then(response => {
+      this.eventos = response.data;
+    });
   }
 }
 
 angular.module('99partyApp')
   .component('eventos', {
     templateUrl: 'app/eventos/eventos.html',
-    controller: EventosComponent
+    controller: EventosComponent,
+    controllerAs: 'vm'
   });
 
 })();

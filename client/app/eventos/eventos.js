@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('eventos')
-  .config(function ($stateProvider) {
+angular.module('99partyApp')
+  .config(function($stateProvider) {
     $stateProvider
       .state('eventos', {
         url: '/eventos',

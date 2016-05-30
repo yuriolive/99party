@@ -1,1 +1,25 @@
-<div>This is the eventos view.</div>
+<div class="container">
+  <div class="row marketing">
+    <div class="col-lg-6">
+
+      <div ng-repeat="evento in vm.eventos">
+        <div class="row">
+          <div class="col-sm-4" >
+            <div class="fluid-container img-evento-list" style="background-image: url('{{evento.img}}')"></div>
+          </div>
+          <div class="col-sm-8">
+            <h4><b>{{evento.name}}</b></h4>
+            <p><b>Data:</b> {{evento.date | date:'dd/MM'}} <b>Local:</b> {{evento.place.name}} </p>
+            <p>{{evento.description}}</p>
+            <button type="button" class="btn btn-danger" aria-label="Left Align">
+              Quero Ir
+            </button>
+          </div>
+        </div>
+        <hr/>
+      </div>
+
+    </div>
+
+  </div>
+</div>

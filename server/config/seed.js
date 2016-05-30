@@ -6,6 +6,7 @@
 'use strict';
 import Thing from '../api/thing/thing.model';
 import User from '../api/user/user.model';
+import Curso from '../api/curso/curso.model';
 
 Thing.find({}).remove()
   .then(() => {
@@ -36,6 +37,28 @@ Thing.find({}).remove()
       name: 'Deployment Ready',
       info: 'Easily deploy your app to Heroku or Openshift with the heroku ' +
              'and openshift subgenerators'
+    });
+  });
+
+Curso.find({}).remove()
+  .then(() => {
+    Curso.create({
+      name: 'Festa do Chapéu',
+      description: 'A festa mais da hora',
+      date: '2016/02/03',
+      img: '/assets/images/chapeu.png',
+      place: {
+        name: 'Campinas Hall',
+        street: 'Rua dos Bebados',
+        number: 53,
+        city: 'Campinas',
+        state: 'São Paulo',
+        country: 'Brazil',
+        geo: {
+          lat: 0,
+          lon: 0
+        }
+      }
     });
   });
 
