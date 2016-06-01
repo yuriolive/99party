@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Theme Company</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class = "container-fluid customJumboBg white">
+
+	<div class="container-fluid text-center white">
+		<h1>Yo, u wannna to party? Like party hard? Aight, then this is where u belong, u know?</h1>
+        <img src="99.png" alt="99" style="width:200px;height:200px;">
+		<div class="form-inline">
+		  <input type="Search" class="form-control" size="50" placeholder="Search for nearby parties...">
+		  <button type="button" class="btn btn-default">Search</button>
+		</div>
+	</div>
+
+	<div class="container-fluid text-center black white">
+  <h2 style="color:white;margin-left:30px;"> Last week's parties:</h2>
+  <h4 style="color:white;margin-left:30px;">Damn! They were awesome!</h4>
+  <div class="row text-center">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="party1.jpg" alt="Paris">
+        <p><strong>Color festival</strong></p>
+        <p>A messy party</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <a href="http://127.0.0.1:46589/teste.html">
+            <img src="party2.jpg" alt="Churras à trois">
+            <p><strong>Churras à Trois</strong></p>
+            <p>Drunk students everywhere</p>
+        </a>    
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="party3.jpg" alt="Wonderland">
+        <p><strong>Wonderland</strong></p>
+        <p>Electronic music all night</p>
+      </div>
+    </div>
+	</div>
+
+	<div class="container-fluid white">
+		<h2>About 99 Party</h2>
+		<h4>We care about your social life</h4> 
+		<p>Party hard or go home</p>
+		<a href="http://127.0.0.1:49611/teste.html"><button class="btn btn-default btn-lg">Register</button></a>
+	</div>
+
+	<div class="container-fluid white">
+		<h2>Our Values</h2>
+		<h4><strong>MISSION:</strong> Our goal is to make your parting-time easier to manage</h4> 
+		<p><strong>VISION:</strong> Carpe Diem (Seize the day)
+	</div>
+
+</div>
+
+<style type="text/css">
+	.customJumboBg{
+	background-image: url("http://cdn.pcwallart.com/images/universe-hd-purple-wallpaper-2.jpg");
+	}
+</style>
+    
+<style type = "text/css">
+	.white{
+	color: #fff;
+	}
+</style>
+    
+<style type = "text/css">
+	.black{
+	color: #000000;
+	}
+</style>
+</body>
+</html>
+
+	
