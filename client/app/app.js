@@ -10,7 +10,8 @@ angular.module('99partyApp', [
   'btford.socket-io',
   'ui.router',
   'ui.bootstrap',
-  'validation.match'
+  'validation.match',
+  'angular-loading-bar'
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider
