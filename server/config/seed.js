@@ -6,7 +6,7 @@
 'use strict';
 import Thing from '../api/thing/thing.model';
 import User from '../api/user/user.model';
-import Curso from '../api/curso/curso.model';
+import Curso from '../api/evento/evento.model';
 
 Thing.find({}).remove()
   .then(() => {

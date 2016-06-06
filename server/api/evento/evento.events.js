@@ -1,15 +1,15 @@
 /**
- * Curso model events
+ * Evento model events
  */
 
 'use strict';
 
 import {EventEmitter} from 'events';
-import Curso from './curso.model';
-var CursoEvents = new EventEmitter();
+import Evento from './evento.model';
+var EventoEvents = new EventEmitter();
 
 // Set max event listeners (0 == unlimited)
-CursoEvents.setMaxListeners(0);
+EventoEvents.setMaxListeners(0);
 
 // Model events
 var events = {
@@ -20,14 +20,14 @@ var events = {
 // Register the event emitter to the model events
 for (var e in events) {
   var event = events[e];
-  Curso.schema.post(e, emitEvent(event));
+  Evento.schema.post(e, emitEvent(event));
 }
 
 function emitEvent(event) {
   return function(doc) {
-    CursoEvents.emit(event + ':' + doc._id, doc);
-    CursoEvents.emit(event, doc);
+    EventoEvents.emit(event + ':' + doc._id, doc);
+    EventoEvents.emit(event, doc);
   }
 }
 
-export default CursoEvents;
+export default EventoEvents;

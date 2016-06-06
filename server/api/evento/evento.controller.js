@@ -1,16 +1,16 @@
 /**
  * Using Rails-like standard naming convention for endpoints.
- * GET     /api/cursos              ->  index
- * POST    /api/cursos              ->  create
- * GET     /api/cursos/:id          ->  show
- * PUT     /api/cursos/:id          ->  update
- * DELETE  /api/cursos/:id          ->  destroy
+ * GET     /api/eventos              ->  index
+ * POST    /api/eventos              ->  create
+ * GET     /api/eventos/:id          ->  show
+ * PUT     /api/eventos/:id          ->  update
+ * DELETE  /api/eventos/:id          ->  destroy
  */
 
 'use strict';
 
 import _ from 'lodash';
-import Curso from './curso.model';
+import evento from './evento.model';
 
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
@@ -59,43 +59,43 @@ function handleError(res, statusCode) {
   };
 }
 
-// Gets a list of Cursos
+// Gets a list of eventos
 export function index(req, res) {
-  return Curso.find().exec()
+  return evento.find().exec()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Gets a single Curso from the DB
+// Gets a single evento from the DB
 export function show(req, res) {
-  return Curso.findById(req.params.id).exec()
+  return evento.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Creates a new Curso in the DB
+// Creates a new evento in the DB
 export function create(req, res) {
-  return Curso.create(req.body)
+  return evento.create(req.body)
     .then(respondWithResult(res, 201))
     .catch(handleError(res));
 }
 
-// Updates an existing Curso in the DB
+// Updates an existing evento in the DB
 export function update(req, res) {
   if (req.body._id) {
     delete req.body._id;
   }
-  return Curso.findById(req.params.id).exec()
+  return evento.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
     .then(saveUpdates(req.body))
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Deletes a Curso from the DB
+// Deletes a evento from the DB
 export function destroy(req, res) {
-  return Curso.findById(req.params.id).exec()
+  return evento.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
     .then(removeEntity(res))
     .catch(handleError(res));

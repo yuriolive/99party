@@ -3,40 +3,40 @@
 var app = require('../..');
 import request from 'supertest';
 
-var newCurso;
+var newEvento;
 
-describe('Curso API:', function() {
+describe('Evento API:', function() {
 
-  describe('GET /api/cursos', function() {
-    var cursos;
+  describe('GET /api/eventos', function() {
+    var eventos;
 
     beforeEach(function(done) {
       request(app)
-        .get('/api/cursos')
+        .get('/api/eventos')
         .expect(200)
         .expect('Content-Type', /json/)
         .end((err, res) => {
           if (err) {
             return done(err);
           }
-          cursos = res.body;
+          eventos = res.body;
           done();
         });
     });
 
     it('should respond with JSON array', function() {
-      cursos.should.be.instanceOf(Array);
+      eventos.should.be.instanceOf(Array);
     });
 
   });
 
-  describe('POST /api/cursos', function() {
+  describe('POST /api/eventos', function() {
     beforeEach(function(done) {
       request(app)
-        .post('/api/cursos')
+        .post('/api/eventos')
         .send({
-          name: 'New Curso',
-          info: 'This is the brand new curso!!!'
+          name: 'New Evento',
+          info: 'This is the brand new evento!!!'
         })
         .expect(201)
         .expect('Content-Type', /json/)
@@ -44,55 +44,55 @@ describe('Curso API:', function() {
           if (err) {
             return done(err);
           }
-          newCurso = res.body;
+          newEvento = res.body;
           done();
         });
     });
 
-    it('should respond with the newly created curso', function() {
-      newCurso.name.should.equal('New Curso');
-      newCurso.info.should.equal('This is the brand new curso!!!');
+    it('should respond with the newly created evento', function() {
+      newEvento.name.should.equal('New Evento');
+      newEvento.info.should.equal('This is the brand new evento!!!');
     });
 
   });
 
-  describe('GET /api/cursos/:id', function() {
-    var curso;
+  describe('GET /api/eventos/:id', function() {
+    var evento;
 
     beforeEach(function(done) {
       request(app)
-        .get('/api/cursos/' + newCurso._id)
+        .get('/api/eventos/' + newEvento._id)
         .expect(200)
         .expect('Content-Type', /json/)
         .end((err, res) => {
           if (err) {
             return done(err);
           }
-          curso = res.body;
+          evento = res.body;
           done();
         });
     });
 
     afterEach(function() {
-      curso = {};
+      evento = {};
     });
 
-    it('should respond with the requested curso', function() {
-      curso.name.should.equal('New Curso');
-      curso.info.should.equal('This is the brand new curso!!!');
+    it('should respond with the requested evento', function() {
+      evento.name.should.equal('New Evento');
+      evento.info.should.equal('This is the brand new evento!!!');
     });
 
   });
 
-  describe('PUT /api/cursos/:id', function() {
-    var updatedCurso;
+  describe('PUT /api/eventos/:id', function() {
+    var updatedEvento;
 
     beforeEach(function(done) {
       request(app)
-        .put('/api/cursos/' + newCurso._id)
+        .put('/api/eventos/' + newEvento._id)
         .send({
-          name: 'Updated Curso',
-          info: 'This is the updated curso!!!'
+          name: 'Updated Evento',
+          info: 'This is the updated evento!!!'
         })
         .expect(200)
         .expect('Content-Type', /json/)
@@ -100,27 +100,27 @@ describe('Curso API:', function() {
           if (err) {
             return done(err);
           }
-          updatedCurso = res.body;
+          updatedEvento = res.body;
           done();
         });
     });
 
     afterEach(function() {
-      updatedCurso = {};
+      updatedEvento = {};
     });
 
-    it('should respond with the updated curso', function() {
-      updatedCurso.name.should.equal('Updated Curso');
-      updatedCurso.info.should.equal('This is the updated curso!!!');
+    it('should respond with the updated evento', function() {
+      updatedEvento.name.should.equal('Updated Evento');
+      updatedEvento.info.should.equal('This is the updated evento!!!');
     });
 
   });
 
-  describe('DELETE /api/cursos/:id', function() {
+  describe('DELETE /api/eventos/:id', function() {
 
     it('should respond with 204 on successful removal', function(done) {
       request(app)
-        .delete('/api/cursos/' + newCurso._id)
+        .delete('/api/eventos/' + newEvento._id)
         .expect(204)
         .end((err, res) => {
           if (err) {
@@ -130,9 +130,9 @@ describe('Curso API:', function() {
         });
     });
 
-    it('should respond with 404 when curso does not exist', function(done) {
+    it('should respond with 404 when evento does not exist', function(done) {
       request(app)
-        .delete('/api/cursos/' + newCurso._id)
+        .delete('/api/eventos/' + newEvento._id)
         .expect(404)
         .end((err, res) => {
           if (err) {

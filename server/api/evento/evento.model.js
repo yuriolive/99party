@@ -15,7 +15,7 @@ var PlaceSchema = new mongoose.Schema({
   }
 });
 
-var CursoSchema = new mongoose.Schema({
+var EventoSchema = new mongoose.Schema({
   name: String,
   description: String,
   date: Date,
@@ -23,4 +23,4 @@ var CursoSchema = new mongoose.Schema({
   place: PlaceSchema
 });
 
-export default mongoose.model('Curso', CursoSchema);
+export default mongoose.model('Evento', EventoSchema);

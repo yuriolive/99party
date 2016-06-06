@@ -7,7 +7,7 @@ class EventosComponent {
   }
 
   $onInit() {
-    this.$http.get('/api/cursos').then(response => {
+    this.$http.get('/api/eventos').then(response => {
       this.eventos = response.data;
     });
   }
